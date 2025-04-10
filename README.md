@@ -1,14 +1,22 @@
-# Autogen Research Assistant
+#🧠 ReGenAI: MultiAgent System for Intelligent Research
 
-A **Virtual Research Assistant** built with Streamlit that retrieves research papers from multiple sources (ArXiv and Google Scholar), summarizes them using an AI-powered agent, and presents concise summaries along with advantages and disadvantages.
+A cutting-edge Virtual Research Companion built with Streamlit + Groq + Autogen, designed to simulate real research workflows using AI agents.
+ReGenAI is more than just a summarizer — it's your personal PhD advisor, startup incubator, grant writer, and academic strategist all rolled into one.
 
 ## Features
 
-- 🔍 **Multi-Source Research Retrieval**: Fetches papers from ArXiv and Google Scholar.
-- 🤖 **Integrated Chatbot Interaction**: Enter your research topic via chat input.
-- ✨ **Advanced Summarization**: AI-driven summarization for quick insights.
-- 🔄 **Automatic Query Expansion**: Enhances search results by suggesting related topics.
-- 📊 **Visual Data Presentation**: Easy-to-read interface with professional styling.
+🔍 Multi-Source Paper Retrieval	Fetches papers from ArXiv and Google Scholar based on your query
+🤖 Agent-based Summarization	Summarizes each paper and outlines advantages and disadvantages
+💬 Interactive Q&A	Chat with papers in a dedicated thread
+🧠 ReGenAI Lab Mode	Multi-agent brainstorm session: innovator, professor, and fund manager simulate idea refinement
+📈 Paper Visualization Agent	Suggests data visualizations (even runs matplotlib code)
+📊 Topic Graph Visualizer	Builds knowledge graph of keywords using PyVis/NetworkX
+⚖️ Paper Comparison Agent	Side-by-side comparison of 2–3 papers by methodology, accuracy, pros/cons
+🤼 Debate Agent	Simulated academic debate between supporter and critic agents
+💡 Startup Fusion Agent	Converts papers into bold startup ideas with MVP plan and investor pitch
+🧪 Auto Experiment Generator	Suggests experiments from a paper: datasets, architecture, pseudocode
+📚 Research Mentor Mode	Suggests reading order, foundational papers, and learning path
+🎭 Historical Advisor Roleplay	Get feedback in the tone of Alan Turing, Fei-Fei Li, and others
 
 ## Setup
 
@@ -16,7 +24,7 @@ A **Virtual Research Assistant** built with Streamlit that retrieves research pa
 2. Clone the repository to your local machine.
 3. Navigate to the project directory:
     ```
-    cd F:/Autogen-Research-Agent
+    cd ReGenAI
     ```
 4. Install the required packages:
     ```
@@ -39,17 +47,24 @@ streamlit run app.py
 
 ## File Structure
 
-- `app.py` – Main Streamlit app file.
-- `agents.py` – Contains the AI agent logic for summarization and analysis.
-- `data_loader.py` – Handles fetching research papers from ArXiv and Google Scholar.
-- `README.md` – This file.
+app.py                  # Main dashboard for summarization, comparison, and debate
+chat_page.py            # Individual paper Q&A interface
+agents.py               # Multi-agent Autogen setup (summarizer, critic, innovator, etc.)
+data_loader.py          # Handles ArXiv / Google Scholar fetching
+/pages/
+    ReGenAI Lab Mode.py             # Brainstorm session for your topic
+    Auto Experiment Generator.py    # Generate experiment plan from summary
+    Startup Fusion.py               # Turn papers into startup MVPs
+    Debate Agent.py (optional)      # Also embedded in app.py
+graph_builder.py         # Keyword extraction and topic graph builder
 
 ## Built With
 
-- [Streamlit](https://streamlit.io/)
-- [Scholarly](https://github.com/scholarly-python-package/scholarly)
-- [Groq](https://groq.com/) API integration
-- Python libraries: `requests`, `xml.etree.ElementTree`, etc.
+-Streamlit
+-Autogen
+-Groq API
+-scholarly for Google Scholar access
+-Python Libraries: requests, dotenv, xml.etree.ElementTree, networkx, pyvis, etc.
 
 ## License
 
