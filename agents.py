@@ -56,4 +56,45 @@ class ResearchAgents:
             messages=[{"role": "user", "content": f"What kind of visualization can represent this paper: {paper_summary}"}]
         )
         return vis_response.get("content", "No visualization suggestion found.")
+    
+    def ask_question(self, paper_summary, question):
+        """
+        Uses the summarizer_agent to answer questions based on the paper summary.
+        """
+        response = self.summarizer_agent.generate_reply(
+            messages=[
+                {"role": "user", "content": f"Based on this paper:\n\n{paper_summary}\n\nAnswer this question:\n{question}"}
+            ]
+        )
+        return response.get("content", "No answer generated.")
+    # Add this inside ResearchAgents class
+    def recommend_citations(self, thesis_topic, papers):
+        summaries = "\n\n".join([f"Title: {p['title']}\nSummary: {p['summary']}" for p in papers])
+        prompt = (
+            f"I'm writing a thesis on: '{thesis_topic}'.\n"
+            f"Here are some research papers:\n\n{summaries}\n\n"
+            "Please recommend which papers are best suited as citations for this thesis topic, "
+            "based on their relevance, clarity of methodology, and impact. "
+            "For each recommended paper, explain in 2-3 lines why it's useful to cite."
+        )
 
+        response = self.summarizer_agent.generate_reply(
+            messages=[{"role": "user", "content": prompt}]
+        )
+        return response.get("content", "Citation recommendation failed.")
+    def compare_papers(self, selected_papers):
+        summaries = "\n\n".join([
+            f"Title: {p['title']}\nSummary: {p['summary']}\nAdvantages and Disadvantages: {p['advantages_disadvantages']}"
+            for p in selected_papers
+        ])
+        prompt = (
+            f"Compare the following papers side-by-side.\n\n{summaries}\n\n"
+            "Return a markdown-formatted table comparing:\n"
+            "- Methodology\n- Dataset Used\n- Accuracy (if any)\n- Pros & Cons\n"
+            "Then provide a short paragraph summarizing which paper is better and why."
+        )
+
+        response = self.advantages_disadvantages_agent.generate_reply(
+            messages=[{"role": "user", "content": prompt}]
+        )
+        return response.get("content", "Comparison failed.")
