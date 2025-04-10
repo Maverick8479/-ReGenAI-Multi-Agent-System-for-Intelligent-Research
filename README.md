@@ -1,4 +1,4 @@
-#🧠 ReGenAI: MultiAgent System for Intelligent Research
+# 🧠 ReGenAI: MultiAgent System for Intelligent Research
 
 A cutting-edge Virtual Research Companion built with Streamlit + Groq + Autogen, designed to simulate real research workflows using AI agents.
 ReGenAI is more than just a summarizer — it's your personal PhD advisor, startup incubator, grant writer, and academic strategist all rolled into one.
