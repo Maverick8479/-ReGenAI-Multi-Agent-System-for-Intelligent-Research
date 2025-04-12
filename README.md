@@ -6,17 +6,25 @@ ReGenAI is more than just a summarizer — it's your personal PhD advisor, start
 ## Features
 
 🔍 Multi-Source Paper Retrieval	Fetches papers from ArXiv and Google Scholar based on your query
+
 🤖 Agent-based Summarization	Summarizes each paper and outlines advantages and disadvantages
+
 💬 Interactive Q&A	Chat with papers in a dedicated thread
+
 🧠 ReGenAI Lab Mode	Multi-agent brainstorm session: innovator, professor, and fund manager simulate idea refinement
+
 📈 Paper Visualization Agent	Suggests data visualizations (even runs matplotlib code)
+
 📊 Topic Graph Visualizer	Builds knowledge graph of keywords using PyVis/NetworkX
+
 ⚖️ Paper Comparison Agent	Side-by-side comparison of 2–3 papers by methodology, accuracy, pros/cons
+
 🤼 Debate Agent	Simulated academic debate between supporter and critic agents
-💡 Startup Fusion Agent	Converts papers into bold startup ideas with MVP plan and investor pitch
+
 🧪 Auto Experiment Generator	Suggests experiments from a paper: datasets, architecture, pseudocode
+
 📚 Research Mentor Mode	Suggests reading order, foundational papers, and learning path
-🎭 Historical Advisor Roleplay	Get feedback in the tone of Alan Turing, Fei-Fei Li, and others
+
 
 ## Setup
 
