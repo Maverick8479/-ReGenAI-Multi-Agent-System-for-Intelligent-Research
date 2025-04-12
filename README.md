@@ -53,18 +53,6 @@ streamlit run app.py
     GROQ_API_KEY=your-api-key-here
     ```
 
-## File Structure
-
-app.py                  # Main dashboard for summarization, comparison, and debate
-chat_page.py            # Individual paper Q&A interface
-agents.py               # Multi-agent Autogen setup (summarizer, critic, innovator, etc.)
-data_loader.py          # Handles ArXiv / Google Scholar fetching
-/pages/
-    ReGenAI Lab Mode.py             # Brainstorm session for your topic
-    Auto Experiment Generator.py    # Generate experiment plan from summary
-    Startup Fusion.py               # Turn papers into startup MVPs
-    Debate Agent.py (optional)      # Also embedded in app.py
-graph_builder.py         # Keyword extraction and topic graph builder
 
 ## Built With
 
